@@ -1,4 +1,3 @@
-let elem;
 const DomElement = function(selector, height, width, bg = '#ccc', fontSize = '14px') {
     this.selector = selector;
     this.height = height;
@@ -19,29 +18,37 @@ DomElement.prototype.createElement = function() {
         div.setAttribute('id', newSelector);
     };
     div.textContent = 'я элемент';
-    div.style.cssText = `position: absolute; top: 200px; left: 200px; text-align: center; margin: 30px; height: ${this.height}px; width: ${this.width}px; background: ${this.bg}; fontSize: ${this.fontSize}px;`;
+    div.style.cssText = `position: absolute; top: 200px; left: 200px;
+    text-align: center; margin: 30px;
+    height: ${this.height}px; width: ${this.width}px; background: ${this.bg}; fontSize: ${this.fontSize}px;`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const newElem = new DomElement('.square', '100', '100', 'orange', 16);
+    let body = document.body;
     let elem = document.getElementsByTagName('div');
-    document.body.addEventListener('keydown', (event) => {
+    console.log(elem);
+    
+    body.style.position = 'relative';
+    body.addEventListener('keydown', (event) => {
+            console.dir(window.getComputedStyle(elem[0]));
             console.log(event.key);
             if (event.key = 'ArrowDown') {
-                elem[0].style.transform = 'translateY(-30px)';
+                elem[0].style.top = '100';
             }
-            if (event.key = 'ArrowUp') {
-                elem[0].style.transform = 'translateY(20px)';
+            else if (event.key = 'ArrowUp') {
+                elem[0].style.top = '150';
             }
-            if (event.key = 'ArrowLeft') {
-                elem[0].style.transform = 'translateX(-30px)';
+            else if (event.key = 'ArrowLeft') {
+                elem[0].style.left = '100';
             }
-            if (event.key = 'ArrowRight') {
-                elem[0].style.transform = 'translateX(20px)'
+            else if (event.key = 'ArrowRight') {
+                elem[0].style.left = '150';
             }
     });
     document.body.addEventListener('keyup', (event) => {
-        elem[0].style.transform = 'none'
+        elem[0].style.top = '200';
+        elem[0].style.left = '200';
     })
     newElem.createElement();
 })
