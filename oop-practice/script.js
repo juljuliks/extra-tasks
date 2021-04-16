@@ -23,6 +23,4 @@ DomElement.prototype.createElement = function() {
 const firstElem = new DomElement('.square', '150', '150', 'green', 16);
 firstElem.createElement();
 
-const secondElem = new DomElement('#big-square', '200', '200', 'red', 14);
-secondElem.createElement('fsd');
 
