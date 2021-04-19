@@ -41,6 +41,7 @@ function render() {
         binBtn.addEventListener('click', function() {
             const index = todoData.indexOf(item)
             console.log(index);
+            
             if (index > -1) {
                 todoData.splice(index, 1);
                 localStorage.setItem('todo', JSON.stringify(todoData))
@@ -79,52 +80,3 @@ window.addEventListener('keydown', function (event) {
 });
 
 render();
-
-
-
-
-
-
-
-// function addTask() {
-//     localStorage.setItem('memory', input.value);
-// }
-
-// function showTask(event) {
-//     list[0].style.marginBottom = '10px';
-//     let cloneListItem = list[0].cloneNode(true);
-//     cloneListItem.childNodes.forEach(() => {
-//         text.textContent = localStorage.getItem('memory');
-//     });
-//     list[0].parentNode.insertBefore(cloneListItem, list[0]);
-//     addTask()
-// }
-
-// function removeTask() {
-//     console.log(document.getElementsByClassName(".todo-item"));
-// }
-
-// function moveToDone() {
-//     console.log('sdc');
-// }
-
-// plusBtn.addEventListener('click', () => {
-//     if (input.value === '' || input.value.trim() === '' ) {
-//         plusBtn.setAttribute('disabled', 'true');
-//         plusBtn.removeAttribute('disabled');
-//     } else {
-//         showTask();
-//         input.value = '';
-//     }
-// })
-
-// window.addEventListener('keydown', function(event) {
-//    if (event.key === 'Enter') {
-//     event.preventDefault();
-//     showTask();
-//    }
-// })
-
-// bin.addEventListener('click', removeTask)
-
-// btnDone.addEventListener('click', moveToDone)

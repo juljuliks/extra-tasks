@@ -10,9 +10,6 @@ class Seconds extends First {
         console.log('А я наследуемый метод!');
     }
 }
-
-const f = new First();
 const s = new Seconds();
 
-f.hello();
 s.hello();
