@@ -4,7 +4,7 @@ p = document.querySelector('p');
 
 const throttle = (fn, delay) => {
     let last = 0;
-    return(...args) => {
+    return () => {
         const now = new Date().getTime();
         if((now - last) < delay) {
             return;
