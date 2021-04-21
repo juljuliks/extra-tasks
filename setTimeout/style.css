@@ -1,0 +1,12 @@
+#img {
+    position: relative;
+    width: 150px;
+}
+
+body {
+    position: absolute;
+}
+button {
+    position: relative;
+    left: 300px;
+}
