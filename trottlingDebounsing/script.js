@@ -2,18 +2,18 @@ const input = document.querySelector('input'),
 p = document.querySelector('p');
 
 
-const throttle = (fn, delay) => {
-    let last = 0;
-    return () => {
-        const now = new Date().getTime();
-        if((now - last) < delay) {
-            return;
+const debounce = (fn, delay) => {
+    let timoutId;
+    return function() {
+        if(timoutId) {
+            clearTimeout(timoutId)
         }
-        last = now;
-        return fn()
+        timoutId = setTimeout( () => {
+            fn()
+        }, delay)
     }
 }
 
-input.addEventListener('keydown', throttle(() => {
+input.addEventListener('keydown', debounce(e => {
     p.textContent = input.value;
 }, 300));

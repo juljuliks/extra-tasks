@@ -31,5 +31,5 @@ startBtn.addEventListener('click', function() {
 resetBtn.addEventListener('click', function() {
     img.style.top = '0';
     count = 0;
-    startBtn.textContent = 'Начать';
+    if(startBtn.textContent !== 'Остановить') startBtn.textContent = 'Начать';
 })
