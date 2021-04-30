@@ -20,7 +20,7 @@ const res3 = task3.innerHTML.match(/\".+\"/g);
 task3.innerHTML = task3.innerHTML.replace(/\".+\"/g, (str) => `<mark>${str}</mark>`);
 
 const task4 = document.querySelector('body');
-const res4 = task3.innerHTML.match(/[http]+:\/\/.+[a-z]/g);
+const res4 = task3.textContent.match(/[http]+:\/\/.+[a-z]/g);
 res4.forEach(el => {
     console.log(el);
     // task4.innerHTML = task4.innerHTML.replace(/[http]+:\/\/.+[a-z]/g, () => `<code>&lt a href="${el}" &gt</code>`)
