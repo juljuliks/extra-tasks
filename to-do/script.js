@@ -40,8 +40,7 @@ function render() {
         const binBtn = li.querySelector('.todo-remove');
         binBtn.addEventListener('click', function() {
             const index = todoData.indexOf(item)
-            console.log(index);
-            
+
             if (index > -1) {
                 todoData.splice(index, 1);
                 localStorage.setItem('todo', JSON.stringify(todoData))
