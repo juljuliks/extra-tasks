@@ -33,7 +33,5 @@ for (key in obj) {
 
 const task5 = document.querySelector('body');
 const res5 = task5.innerHTML.match(/#[a-f0-9]{6}/gi);
-res5.forEach(el => console.log(el))
-
-
+// res5.forEach(el => console.log(el))
 
